@@ -1,3 +1,5 @@
+## README.md
+
 ```markdown
 # Social-PiggyBacking
 
@@ -141,6 +143,11 @@ These are captured in **requirements.txt** (see below).
 
 ---
 
+## License
+
+Specify your license here (e.g. MIT, Apache 2.0, GPL, etc.).
+If not yet chosen, consider adding a `LICENSE` file.
+
 ---
 
 ## Contact
@@ -150,6 +157,8 @@ For questions, suggestions, or collaborations, reach out at:
 * Your Name / Email
 * GitHub: [Mihir2811](https://github.com/Mihir2811)
 * (Optional) Project page / website
+
+---
 
 ---
 
@@ -169,4 +178,5 @@ nltk>=3.5
 jupyter>=1.0
 
 ```
----
+
+[1]: https://ingmarweber.de/wp-content/uploads/2013/07/Social-piggybacking-leveraging-common-friends-to-generate-event-streams.pdf?utm_source=chatgpt.com "Social piggybacking: leveraging common friends to generate event streams"
