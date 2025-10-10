@@ -1,31 +1,172 @@
-This code performs an analysis of a dataset of COVID-19 related tweets. 
+```markdown
+# Social-PiggyBacking
 
-Data Loading and Preparation:
-1. It loads a CSV file containing tweet data into a Pandas DataFrame.
-2. It renames columns for better readability.
-3. It cleans the tweet text by removing URLs, mentions, hashtags, RTs, punctuation, and converting to lowercase.
+**Social-PiggyBacking** is a machine learning / data analysis project created during the IIT Gandhinagar Hackathon. It seeks to analyze social media datasets to model and predict what content might be most relevant to users via “piggybacking” on social relationships.
 
-Exploratory Data Analysis (EDA) and Visualization:
-1. Tweet Length Distribution: It analyzes the distribution of tweet lengths using a histogram.
-2. Hashtag Frequency: It identifies the most frequent hashtags and visualizes them with a bar plot.
-3. User Followers Distribution: It explores the distribution of the number of followers of users who tweeted.
-4. Followers vs. Retweets: It examines the relationship between the number of followers a user has and whether their tweet is a retweet using a scatter plot.
-5. Top Tweet Sources: It identifies the top tweet sources and presents them with a bar plot.
-6. User Verification: It analyzes the distribution of user verification status using a pie chart.
+In essence, from your dataset of tweets (or social interactions), the project explores how to suggest feeds / content leveraging relationships and behavioral similarity.
 
-Sentiment Analysis:
-1. It uses TextBlob to perform sentiment analysis on the tweet text, categorizing each tweet as positive, negative, or neutral.
-2. It visualizes the sentiment distribution of tweets with a pie chart.
-3. It explores the relationship between tweet sentiment and whether the tweet is a retweet using a count plot.
-4. It visualizes the sentiment distribution by user location (for the top 10 locations) using a count plot.
+---
 
-Overall, this code provides insights into the following aspects of the COVID-19 tweet dataset:
-- Tweet length patterns
-- Popular hashtags
-- User engagement levels (followers, retweets)
-- Sources of tweets
-- User verification status
-- Sentiment expressed in the tweets
-- Relationship between tweet sentiment and retweets
-- Sentiment distribution across different user locations
+## Table of Contents
 
+1. [Project Overview](#project-overview)  
+2. [Features](#features)  
+3. [Repository Structure](#repository-structure)  
+4. [Usage / Running the Project](#usage-running-the-project)  
+5. [Data](#data)  
+6. [Dependencies](#dependencies)  
+7. [Contributing](#contributing)  
+8. [License](#license)  
+9. [Contact](#contact)
+
+---
+
+## Project Overview
+
+This project works on a dataset of **COVID-19 related tweets** and performs:
+
+- Data loading and pre-processing (cleaning, removing noise, normalizing)  
+- Exploratory Data Analysis (e.g. tweet length distributions, hashtag frequencies, user follower distributions, retweet vs followers correlation)  
+- Sentiment analysis using TextBlob  
+- Visualization of results  
+- Building a model to recommend or search relevant feeds from the dataset
+
+The notebook `Social_PiggyBacking.ipynb` is the main analysis / modeling file.
+
+The idea is inspired by “social piggybacking” — leveraging network structure to suggest content flow via connected users.
+
+---
+
+## Features
+
+- Clean and preprocess raw tweet text  
+- Generate visualizations (histograms, bar plots, scatter plots, pie charts)  
+- Sentiment classification (positive / negative / neutral)  
+- Relationship analysis (followers vs retweets, verification status)  
+- Feed search / recommendation logic (based on similarity, user behavior, etc.)
+
+---
+
+## Repository Structure
+
+```
+
+.
+├── Social_PiggyBacking.ipynb      ← Jupyter notebook with the analysis & modeling
+├── Social.pdf                     ← PDF / project documentation
+├── covid19_tweets.rar             ← Raw tweet data archive
+├── README.md                      ← This file
+├── requirements.txt               ← Python dependencies
+└── other supporting files / assets
+
+````
+
+You might also have generated image / plot outputs as part of the notebook.
+
+---
+
+## Usage / Running the Project
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/Mihir2811/Social-PiggyBacking.git
+   cd Social-PiggyBacking
+````
+
+2. Set up a Python environment (preferably a virtualenv or conda):
+
+   ```bash
+   python3 -m venv venv
+   source venv/bin/activate
+   ```
+
+3. Install dependencies:
+
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+4. Unpack the data:
+
+   ```bash
+   unrar x covid19_tweets.rar  # or use any appropriate tool
+   ```
+
+5. Open and run the notebook:
+
+   ```bash
+   jupyter notebook Social_PiggyBacking.ipynb
+   ```
+
+6. Follow through the cells to see data loading, cleaning, visualization, sentiment modeling, and feed recommendation logic.
+
+You may also convert or re-run parts of the notebook as Python scripts if preferred.
+
+---
+
+## Data
+
+* **covid19_tweets.rar**: The main dataset containing tweets related to COVID-19 (likely in CSV or JSON inside).
+* You’ll need to load this dataset into the notebook and possibly adjust file paths, column names, or formats.
+
+Be cautious: the dataset might be large, so ensure enough memory or sample subsets if needed.
+
+---
+
+## Dependencies
+
+The dependencies which this project uses (or likely uses) include:
+
+* `pandas`
+* `numpy`
+* `matplotlib`
+* `seaborn`
+* `textblob`
+* `nltk`
+* `scikit-learn`
+* `jupyter`
+* (optional) `wordcloud` or other visualization / NLP libs
+
+These are captured in **requirements.txt** (see below).
+
+---
+
+## Contributing
+
+* You’re welcome to submit bug fixes or improvements via pull requests.
+* If you add new modules or scripts, update the README with usage instructions.
+* For large datasets, perhaps include a sample subset for quick testing.
+* If you refactor the notebook into modules, consider adding a `main.py` or command line interface.
+
+---
+
+---
+
+## Contact
+
+For questions, suggestions, or collaborations, reach out at:
+
+* Your Name / Email
+* GitHub: [Mihir2811](https://github.com/Mihir2811)
+* (Optional) Project page / website
+
+---
+
+## requirements.txt
+
+Below is a sample `requirements.txt`. You may adjust versions as per your testing environment.
+
+```
+
+pandas>=1.0
+numpy>=1.19
+matplotlib>=3.0
+seaborn>=0.10
+scikit-learn>=0.23
+textblob>=0.15
+nltk>=3.5
+jupyter>=1.0
+
+```
+---
